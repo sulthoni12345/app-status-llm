@@ -1,0 +1,107 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "temperature": 0,
+  "max_tokens": 10,
+  "labels": [
+    "Lulus",
+    "Tidak Lulus"
+  ],
+  "system_prompt": "Tugas: klasifikasikan status kelulusan siswa berdasarkan data berikut menjadi tepat satu label: Lulus (nilai akhir ≥ 10) atau Tidak Lulus (nilai akhir < 10). Balas hanya dengan satu label persis seperti tertulis, tanpa penjelasan. Setiap data ditulis dalam format 'Nama fitur: nilai'.",
+  "few_shot": [
+    {
+      "data": {
+        "jam_belajar_kategori": 2,
+        "jumlah_gagal": 2,
+        "jumlah_absen": 4,
+        "nilai_periode_1": 7,
+        "nilai_periode_2": 7,
+        "pendidikan_ibu": 3,
+        "pendidikan_ayah": 2,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 0
+      },
+      "label": "Tidak Lulus"
+    },
+    {
+      "data": {
+        "jam_belajar_kategori": 2,
+        "jumlah_gagal": 0,
+        "jumlah_absen": 4,
+        "nilai_periode_1": 6,
+        "nilai_periode_2": 5,
+        "pendidikan_ibu": 3,
+        "pendidikan_ayah": 3,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 1
+      },
+      "label": "Tidak Lulus"
+    },
+    {
+      "data": {
+        "jam_belajar_kategori": 1,
+        "jumlah_gagal": 0,
+        "jumlah_absen": 0,
+        "nilai_periode_1": 13,
+        "nilai_periode_2": 12,
+        "pendidikan_ibu": 4,
+        "pendidikan_ayah": 4,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 1
+      },
+      "label": "Lulus"
+    },
+    {
+      "data": {
+        "jam_belajar_kategori": 2,
+        "jumlah_gagal": 0,
+        "jumlah_absen": 13,
+        "nilai_periode_1": 12,
+        "nilai_periode_2": 12,
+        "pendidikan_ibu": 4,
+        "pendidikan_ayah": 4,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 1
+      },
+      "label": "Lulus"
+    },
+    {
+      "data": {
+        "jam_belajar_kategori": 1,
+        "jumlah_gagal": 0,
+        "jumlah_absen": 10,
+        "nilai_periode_1": 18,
+        "nilai_periode_2": 19,
+        "pendidikan_ibu": 4,
+        "pendidikan_ayah": 2,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 1
+      },
+      "label": "Lulus"
+    },
+    {
+      "data": {
+        "jam_belajar_kategori": 4,
+        "jumlah_gagal": 0,
+        "jumlah_absen": 0,
+        "nilai_periode_1": 7,
+        "nilai_periode_2": 9,
+        "pendidikan_ibu": 4,
+        "pendidikan_ayah": 3,
+        "ingin_lanjut_kuliah": 1,
+        "akses_internet": 1
+      },
+      "label": "Tidak Lulus"
+    }
+  ],
+  "evaluasi": {
+    "accuracy": 0.8608,
+    "f1_macro": 0.8512,
+    "invalid": 0,
+    "n": 79,
+    "dataset": "dataset_nilai_siswa.csv (bagian test)",
+    "tanggal": "2026-10-31",
+    "pilihan_prompt": "C2_few_shot",
+    "lolos": true,
+    "f1_dnn_pembanding": 0.8512
+  }
+}
